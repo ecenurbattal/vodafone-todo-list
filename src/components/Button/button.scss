@@ -1,0 +1,23 @@
+.button {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden;
+  height: 40px;
+  width: 80px;
+  background-color: #009fd4;
+  color:white;
+  font-size:16px;
+  margin: 0 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+
+  
+  &:hover {
+    background-color: lighten(#009fd4, 3%);
+  }
+  &:active {
+    background-color: darken(#009fd4, 3%);
+  }
+}
