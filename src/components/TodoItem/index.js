@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useGlobalState from "../../context/useGlobalState";
 import { deleteTodo, updateTodo } from "../../services/api";
 import Input from "../Input";
@@ -21,15 +21,15 @@ const TodoItem = ({ todo }) => {
 
   const handleDeleteClick = async (id) => {
     try {
-      const { data } = await deleteTodo(todo.id);
+      await deleteTodo(id);
       globalDispatch({
         type: "delete_todo",
-        payload: todo.id
+        payload: id,
       });
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className={`todo ${todo.status ? "todo--done" : ""}`}>
@@ -40,7 +40,7 @@ const TodoItem = ({ todo }) => {
         onChange={(event) => handleCheckboxChange(event.target.checked)}
       />
       <span className="todo__name">{todo.name}</span>
-      <img onClick={handleDeleteClick} className="todo__trash" src="/icons/trash.svg" alt="trash" />
+      <img onClick={() => handleDeleteClick(todo.id)} className="todo__trash" src="/icons/trash.svg" alt="trash" />
     </div>
   );
 };
