@@ -9,10 +9,10 @@ const TodoList = () => {
   return (
     <div className="todos">
       {globalState.todos.length ? (
-        globalState.todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
-        ))
-      ) : <span className="todos__not-found">Nothing here yet.</span>}
+        globalState.todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+      ) : (
+        <span className="todos__not-found">Nothing here yet.</span>
+      )}
     </div>
   );
 };

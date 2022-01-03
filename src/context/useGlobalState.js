@@ -1,21 +1,19 @@
-import { useContext } from 'react'
-import GlobalContext from './GlobalContext'
+import { useContext } from "react";
+import GlobalContext from "./GlobalContext";
 
 const useGlobalState = () => {
   const context = useContext(GlobalContext);
 
-  if(!context) {
-    throw new Error('useGlobalState must be used within a GlobalContextProvider')
+  if (!context) {
+    throw new Error("useGlobalState must be used within a GlobalContextProvider");
   }
 
-  const [globalState,globalDispatch] = context
+  const [globalState, globalDispatch] = context;
 
-  return (
-    {
-      globalState,
-      globalDispatch
-    }
-  )
-}
+  return {
+    globalState,
+    globalDispatch,
+  };
+};
 
-export default useGlobalState
+export default useGlobalState;

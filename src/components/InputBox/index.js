@@ -13,17 +13,17 @@ const InputBox = () => {
 
   const handleAddClick = async () => {
     try {
-      const {data} = await createTodo({
-        id:uniqid(), // prefix, isRandom
-        status:false,
-        name:todo
-      })
-      globalDispatch({type:'add_todo', payload:data})
+      const { data } = await createTodo({
+        id: uniqid(), // prefix, isRandom
+        status: false,
+        name: todo,
+      });
+      globalDispatch({ type: "add_todo", payload: data });
       setTodo("");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div className="inputBox">

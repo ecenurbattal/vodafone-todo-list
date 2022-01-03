@@ -1,13 +1,13 @@
 import React from "react";
 import InputBox from "../InputBox";
 import TodoList from "../TodoList";
-import './content.scss'
+import "./content.scss";
 
 const Content = () => {
   return (
     <div className="content">
       <InputBox />
-      <TodoList/>
+      <TodoList />
     </div>
   );
 };
